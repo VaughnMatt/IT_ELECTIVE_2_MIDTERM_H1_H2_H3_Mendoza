@@ -1,0 +1,36 @@
+﻿@model IEnumerable<PosApp.Models.Transaction>
+
+<h2 class="mb-4">📜 Sales History</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-warning">No recorded transactions found.</div>
+}
+else
+{
+    <table class="table table-striped align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>Date</th>
+                <th>Transaction ID</th>
+                <th>Customer</th>
+                <th>Total Amount</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var tx in Model)
+            {
+                <tr>
+                    <td>@tx.Date.ToString("yyyy-MM-dd HH:mm")</td>
+                    <td><code>@tx.TransactionId</code></td>
+                    <td>@tx.CustomerName</td>
+                    <td>$@tx.TotalAmount.ToString("F2")</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@tx.TransactionId" class="btn btn-sm btn-info text-white">View Items</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

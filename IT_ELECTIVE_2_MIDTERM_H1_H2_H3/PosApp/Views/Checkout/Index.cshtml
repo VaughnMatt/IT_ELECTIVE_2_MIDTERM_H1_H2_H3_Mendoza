@@ -1,0 +1,25 @@
+﻿@model PosApp.DTOs.CheckoutFormDTO
+
+<h2 class="mb-4">💳 Customer Checkout</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="CompleteCheckout" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="mb-3">
+                <label asp-for="CustomerName" class="form-label">Customer Name *</label>
+                <input asp-for="CustomerName" class="form-control" placeholder="e.g. Alex Mercer" />
+                <span asp-validation-for="CustomerName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="CustomerEmail" class="form-label">Customer Email (Optional)</label>
+                <input asp-for="CustomerEmail" class="form-control" placeholder="e.g. alex@example.com" />
+                <span asp-validation-for="CustomerEmail" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg w-100">Confirm Payment & Complete Sale</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@500;600;700&display=swap');
+
+:root {
+    --bg-dark: #12121e;
+    --card-bg: #1e1e2f;
+    --neon-cyan: #00f3ff;
+    --neon-pink: #ff007f;
+    --neon-green: #39ff14;
+    --text-main: #e2e8f0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+}
+h2, h4, .navbar-brand {
+    font-family: 'Press Start 2P', monospace;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px rgba(0, 243, 255, 0.4);
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: var(--text-main);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 243, 255, 0.25);
+        border-color: var(--neon-cyan);
+    }
+
+.card-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: #ffffff;
+}
+.opacity-75 {
+    filter: grayscale(60%);
+    border-color: rgba(255, 0, 127, 0.3) !important;
+}
+.btn-primary {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    border: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(0, 114, 255, 0.3);
+}
+
+    .btn-primary:hover {
+        background: linear-gradient(135deg, #0072ff, #00c6ff);
+        box-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
+    }
+
+.btn-success {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+    border: none;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(56, 239, 125, 0.3);
+}
+
+    .btn-success:hover {
+        box-shadow: 0 0 15px rgba(57, 255, 20, 0.6);
+    }
+.form-control, .form-select {
+    background-color: #0d0d17;
+    border: 1px solid #2e2e4a;
+    color: #ffffff;
+}
+
+    .form-control:focus {
+        background-color: #121222;
+        color: #ffffff;
+        border-color: var(--neon-cyan);
+        box-shadow: 0 0 8px rgba(0, 243, 255, 0.4);
+    }
+.table {
+    color: var(--text-main);
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+    .table th {
+        background-color: #0d0d1a !important;
+        color: var(--neon-cyan) !important;
+        font-weight: 700;
+        border-bottom: 2px solid var(--neon-cyan);
+    }
+
+    .table td {
+        border-color: rgba(255, 255, 255, 0.05);
+        vertical-align: middle;
+    }
+.alert-danger {
+    background-color: #3d0016;
+    border-color: var(--neon-pink);
+    color: #ff80bf;
+}
+
+.alert-success {
+    background-color: #002b17;
+    border-color: var(--neon-green);
+    color: #80ff9f;
+}
+.navbar {
+    border-bottom: 2px solid var(--neon-pink) !important;
+}
+
+.nav-link:hover {
+    color: var(--neon-cyan) !important;
+    text-shadow: 0 0 5px var(--neon-cyan);
+}

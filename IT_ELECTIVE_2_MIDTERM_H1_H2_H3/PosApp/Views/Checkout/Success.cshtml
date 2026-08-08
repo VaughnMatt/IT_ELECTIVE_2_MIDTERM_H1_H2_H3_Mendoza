@@ -1,0 +1,22 @@
+﻿@model PosApp.Models.Transaction
+
+<div class="alert alert-success text-center py-4">
+    <h2 class="alert-heading">🎉 Transaction Successful!</h2>
+    <p>Transaction ID: <strong>@Model.TransactionId</strong></p>
+    <p>Date: @Model.Date.ToString("g")</p>
+    <p>Customer: <strong>@Model.CustomerName</strong></p>
+    <h4>Total Amount Paid: $@Model.TotalAmount.ToString("F2")</h4>
+</div>
+
+<h4 class="mt-4">Items Purchased</h4>
+<ul class="list-group mb-4">
+    @foreach (var item in Model.PurchasedItems)
+    {
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            @item.ProductName (x@item.Quantity)
+            <span>$@item.LineTotal.ToString("F2")</span>
+        </li>
+    }
+</ul>
+
+<a asp-controller="Products" asp-action="Index" class="btn btn-primary">Back to Catalog</a>

@@ -1,0 +1,32 @@
+﻿@model PosApp.Models.Transaction
+
+<h2 class="mb-3">Transaction Details</h2>
+<p><strong>ID:</strong> @Model.TransactionId</p>
+<p><strong>Customer:</strong> @Model.CustomerName (@(string.IsNullOrEmpty(Model.CustomerEmail) ? "No Email" : Model.CustomerEmail))</p>
+<p><strong>Date:</strong> @Model.Date.ToString("f")</p>
+
+<table class="table table-bordered">
+    <thead class="table-light">
+        <tr>
+            <th>Product</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Line Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.PurchasedItems)
+        {
+            <tr>
+                <td>@item.ProductName</td>
+                <td>$@item.UnitPrice.ToString("F2")</td>
+                <td>@item.Quantity</td>
+                <td>$@item.LineTotal.ToString("F2")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h4 class="text-end fw-bold">Grand Total: $@Model.TotalAmount.ToString("F2")</h4>
+
+<a asp-action="History" class="btn btn-secondary mt-3">Back to History</a>

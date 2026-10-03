@@ -1,0 +1,3 @@
+﻿Public Class frmLaundryTransactionForm
+
+End Class
